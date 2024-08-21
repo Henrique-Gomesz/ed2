@@ -1,6 +1,17 @@
 # ninja log v6
+95	169	7459135155158965	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
+1	205	7459136706308777	build.ninja	4dd6d19135954f61
 31	55	1724023815906608398	lista_duplamente_encadeada	4316ba145360ea77
-1	340	7458260222442954	build.ninja	4dd6d19135954f61
-93	163	7458257957428466	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
-5	93	7458257956537661	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
-1	230	7458260222442954	build.ninja	4dd6d19135954f61
+5	94	7459135154258465	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+5	109	7459137942421592	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+109	199	7459137943463261	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
+5	96	7459138549996742	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+96	176	7459138550899267	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
+4	95	7459138609947753	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+96	182	7459138610855790	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
+5	90	7459138886436761	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+91	165	7459138887296228	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
+5	95	7459138943092095	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+95	168	7459138943998907	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
+4	92	7459141027941629	CMakeFiles/lista_duplamente_encadeada.dir/main.cpp.obj	933211d6cbb1916d
+93	164	7459141028832082	lista_duplamente_encadeada.exe	d6f74e3d5e34703f
