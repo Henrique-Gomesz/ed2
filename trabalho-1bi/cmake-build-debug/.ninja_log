@@ -1,0 +1,13 @@
+# ninja log v6
+3	198	7460864857476673	build.ninja	26ee807968c90f59
+4	75	7460863995548254	CMakeFiles/trabalho_1bi.dir/main.c.obj	bcb050dcd8be74c2
+76	154	7460863996266013	trabalho_1bi.exe	7dc5932fc3e4e2c3
+1	189	7460864857476673	build.ninja	26ee807968c90f59
+3	78	7460864979400263	CMakeFiles/trabalho_1bi.dir/main.c.obj	bcb050dcd8be74c2
+78	148	7460864980150724	trabalho_1bi.exe	7dc5932fc3e4e2c3
+4	74	7460865440685473	CMakeFiles/trabalho_1bi.dir/main.c.obj	bcb050dcd8be74c2
+74	143	7460865441385627	trabalho_1bi.exe	7dc5932fc3e4e2c3
+4	76	7460866839574525	CMakeFiles/trabalho_1bi.dir/main.c.obj	bcb050dcd8be74c2
+76	148	7460866840303768	trabalho_1bi.exe	7dc5932fc3e4e2c3
+4	81	7460869215584203	CMakeFiles/trabalho_1bi.dir/main.c.obj	bcb050dcd8be74c2
+81	157	7460869216345346	trabalho_1bi.exe	7dc5932fc3e4e2c3
