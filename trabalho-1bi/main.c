@@ -15,9 +15,49 @@ typedef struct program {
     Token *tokens;
 } Program;
 
+typedef struct variableStack {
+    struct variableStack *next;
+    char *identifier;
+    char *value;
+    Program *pointer;
+} VariableStack;
+
+
+void variableStackPush(VariableStack **stack,const char *identifier, const char *value, Program *pointer) {
+    VariableStack *newStack = (VariableStack *)malloc(sizeof(VariableStack));
+    newStack->identifier = strdup(identifier);
+    newStack->value = strdup(value);
+    newStack->pointer = pointer;
+    newStack->next = *stack;
+
+    *stack = newStack;
+}
+
+void variableStackPop(VariableStack **stack, VariableStack *out) {
+    VariableStack *aux = *stack;
+
+    out->identifier = strdup(aux->identifier);
+    out->value = strdup(aux->value);
+    out->pointer = aux->pointer;
+
+    *stack = (*stack)->next;
+    free(aux->identifier);
+    free(aux->value);
+    free(aux);
+}
+
+void printVariableStack(const VariableStack *stack) {
+    while(stack) {
+        printf("ID: %s | Valor: %s \n", stack->identifier,stack->value);
+        stack = stack->next;
+    }
+}
+
+
+
 void insertToken(Token **tokens, const char *value) {
     Token *newToken = (Token *)malloc(sizeof(Token));
-    newToken->value = strdup(value);  // Duplicate the token string
+    newToken->value = strdup(value);
     newToken->next = NULL;
 
     if (*tokens) {
@@ -44,7 +84,7 @@ char isOperatorOrPunctuation(char c) {
             c == ',' || c == '.' || c == ';' || c == '"');
 }
 
-Token *breakLineIntoTokens(const char *line) {
+Token * breakLineIntoTokens(const char *line) {
     Token *tokens = NULL;
     char aux[MAX_LINE_LENGTH];
     int auxLength = 0;
@@ -121,10 +161,25 @@ void loadProgramFromFile(const char *filename, Program **programs) {
 
 int main(void) {
     Program *program = NULL;
+    VariableStack *variableStack = NULL;
+    VariableStack out;
 
     loadProgramFromFile("code.txt", &program);
 
     printProgram(program);
+
+    variableStackPush(&variableStack,"a","1",NULL);
+    variableStackPush(&variableStack,"b","2",NULL);
+    variableStackPush(&variableStack,"c","3",NULL);
+    printVariableStack(variableStack);
+    variableStackPop(&variableStack,&out);
+    printf("%s\n",out.value);
+    variableStackPop(&variableStack,&out);
+    printf("%s\n",out.value);
+    variableStackPop(&variableStack,&out);
+    printf("%s\n",out.value);
+
+
 
     return 0;
 }
