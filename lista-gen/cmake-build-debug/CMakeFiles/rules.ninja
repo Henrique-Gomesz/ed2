@@ -6,27 +6,27 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: lista_duplamente_encadeada
+# Project: lista_gen
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
 
 #############################################
-# Rule for compiling CXX files.
+# Rule for compiling C files.
 
-rule CXX_COMPILER__lista_duplamente_encadeada_unscanned_Debug
+rule C_COMPILER__lista_gen_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
+  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/cc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
 
 
 #############################################
-# Rule for linking CXX executable.
+# Rule for linking C executable.
 
-rule CXX_EXECUTABLE_LINKER__lista_duplamente_encadeada_Debug
-  command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
-  description = Linking CXX executable $TARGET_FILE
+rule C_EXECUTABLE_LINKER__lista_gen_Debug
+  command = $PRE_LINK && /usr/bin/cc $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 
 
@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/personal/Programs/clion-2024.2.0.1/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/personal/Documents/ed2/lista-duplamente-encadeada -B/home/personal/Documents/ed2/lista-duplamente-encadeada/cmake-build-debug
+  command = /home/personal/Programs/clion-2024.2.0.1/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/personal/Documents/ed2/lista-gen -B/home/personal/Documents/ed2/lista-gen/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
