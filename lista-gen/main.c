@@ -109,24 +109,28 @@ void exibeAtomoRecursive(ListaGen *l) {
 }
 
 void destruct(ListaGen **l) {
+    ListaGen *headAux = head(*l);
+    ListaGen *tailAux = Tail(*l);
     if(!Nula(*l)) {
         if(Atomo(*l))
             free(*l);
         else {
-            destruct(head(*l));
-            destruct(Tail(*l));
+            destruct(&headAux);
+            if(!Nula(Tail(*l)))
+                destruct(&tailAux);
             free(*l);
         }
-        *l = NULL;
+
     }
 }
 
 int main(void) {
     ListaGen *l = (ListaGen*)malloc(sizeof(ListaGen));
-    l = Cons(Cons(Criat("a"),Cons(Criat("b"),NULL)),Cons(Criat("c"),NULL));
+// l = Cons(Cons(Criat("a"),Cons(Criat("b"),NULL)),Cons(Criat("c"),NULL));
+   l = Cons(Criat("A"),Cons(Cons(Criat("B"),Cons(Criat("C"),Cons(Cons(Criat("D"),NULL),NULL))),Cons(Criat("F"),NULL)));
     exibe(l);
     printf("\n");
     exibeAtomoRecursive(l);
-    free(l); // Always free allocated memory
+    destruct(&l);
     return 0;
 }
