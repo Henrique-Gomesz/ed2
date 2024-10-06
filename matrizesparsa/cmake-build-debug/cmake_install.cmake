@@ -1,4 +1,4 @@
-# Install script for directory: /home/personal/Documents/ed2/trabalho-1bi
+# Install script for directory: /home/personal/Documents/ed2/matrizesparsa
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/personal/Documents/ed2/trabalho-1bi/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/personal/Documents/ed2/matrizesparsa/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

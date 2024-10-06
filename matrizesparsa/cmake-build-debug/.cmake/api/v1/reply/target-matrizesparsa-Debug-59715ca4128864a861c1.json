@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "trabalho_1bi.exe"
-		},
-		{
-			"path" : "trabalho_1bi.pdb"
+			"path" : "matrizesparsa"
 		}
 	],
 	"backtrace" : 1,
@@ -56,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "trabalho_1bi::@6890427a1f51a3e7e1df",
+	"id" : "matrizesparsa::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -68,16 +65,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
-	"name" : "trabalho_1bi",
-	"nameOnDisk" : "trabalho_1bi.exe",
+	"name" : "matrizesparsa",
+	"nameOnDisk" : "matrizesparsa",
 	"paths" : 
 	{
 		"build" : ".",

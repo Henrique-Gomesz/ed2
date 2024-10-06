@@ -89,6 +89,11 @@ Token * breakLineIntoTokens(const char *line) {
     char aux[MAX_LINE_LENGTH];
     int auxLength = 0;
 
+    if(strcmp(line,"fim-def\n") == 0) {
+        insertToken(&tokens,"fim-def");
+        return tokens;
+    }
+
     for (int i = 0; i < strlen(line); i++) {
         if (isspace(line[i]) || isOperatorOrPunctuation(line[i])) {
             if (auxLength > 0) {
@@ -159,14 +164,42 @@ void loadProgramFromFile(const char *filename, Program **programs) {
     fclose(file);
 }
 
+Program * findFirstProgramLine(Program *program) {
+    while(program != NULL) {
+        if(strcmp(program->tokens->value,"def") == 0) {
+            while(strcmp(program->tokens->value,"fim-def") != 0)
+                program = program->nextLine;
+        }
+        if(strcmp(program->tokens->value,"def") != 0 && strcmp(program->tokens->value,"fim-def") != 0)
+            break;
+        program = program->nextLine;
+    }
+    return program;
+}
+
+
+void executeProgram(Program *program) {
+    Program *firstLine = findFirstProgramLine(program);
+    if(firstLine) {
+        printf("Primeira linha do programa\n");
+        printTokens(firstLine->tokens);
+    }
+    else
+        printf("Primeira linha não encontrada\n");
+}
+
+
 int main(void) {
     Program *program = NULL;
     VariableStack *variableStack = NULL;
     VariableStack out;
 
-    loadProgramFromFile("code.txt", &program);
 
+
+    loadProgramFromFile("code.txt", &program);
     printProgram(program);
+
+    executeProgram(program);
 
     variableStackPush(&variableStack,"a","1",NULL);
     variableStackPush(&variableStack,"b","2",NULL);

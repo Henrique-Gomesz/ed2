@@ -1,0 +1,3 @@
+/home/personal/Documents/ed2/matrizesparsa/cmake-build-debug/CMakeFiles/matrizesparsa.dir
+/home/personal/Documents/ed2/matrizesparsa/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/personal/Documents/ed2/matrizesparsa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
